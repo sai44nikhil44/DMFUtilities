@@ -1,0 +1,61 @@
+<div class="page-container scrollable" role="main">
+<div class="field"><div  style="text-align: center;">
+    <div class="card auto-height" style="padding: 15px; margin: 15px;">
+        <p style="text-align: center;color: #0072ED; padding: 5px; font-size: 30px;">A2LN</p>
+        <div class="row"><p><font style="color: red;"> {{text}}</font></p>
+            <div class="one-half column">
+                
+                <span class="label font-size-px-24" style="text-align: center;color: black; padding: 10px;">ACCESS</span>
+                <div class="field">
+                    <span class="label font-size-px-25" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import Report:&nbsp;
+                    <input type="file" id="accessIm" data-automation-id="accessIm" name="accessIm" placeholder="Choose file"
+                    (change)="onFileChange($event,'accessIm')" accept=".xls,.xlsx,.csv" [(ngModel)]="imp" /></span>
+                </div>
+                <div class="field">
+                    <span class="label font-size-px-25" >&nbsp;Validation Report:&nbsp;
+                        <input type="file" id="accessvr" data-automation-id="accessvr" name="accessvr" placeholder="Choose file"
+                        (change)="onFileChange($event,'accessvr')" accept=".xls,.xlsx,.csv" [(ngModel)]="vr"/></span>
+                    </div>
+            </div>
+                    <div class="one-half column">
+                        <span class="label font-size-px-24" style="text-align: center;color: black; padding: 10px;">LN</span>
+                        <div class="field">
+                            <span class="label font-size-px-25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Record Count:&nbsp;
+                                <input type="file" id="RA" data-automation-id="RA" name="RTA" placeholder="Choose file"
+                                (change)="onFileChange($event,'RA')" accept=".xls,.xlsx,.csv" [(ngModel)]="rc"/></span>
+                            </div>
+                        <div class="field">
+                        <span class="label font-size-px-25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Migartion Run:&nbsp;
+                            <input type="file" id="LN_MR" data-automation-id="LN_MR" name="LN" placeholder="Choose file"
+                            (change)="onFileChange($event,'LN_MR')" accept=".xls,.xlsx,.csv" [(ngModel)]="mr" multiple/></span>
+                        </div>
+                        <div class="field">
+                            <span class="label font-size-px-25">Count Table Before:&nbsp;
+                                <input type="file" id="LN_CTB" data-automation-id="LN_CTB" name="LN_CTB" placeholder="Choose file"
+                                (change)="onFileChange($event,'LN_CTB')" accept=".xls,.xlsx,.csv" [(ngModel)]="cb"/></span>
+                            </div>
+                            <div class="field">
+                                <span class="label font-size-px-25">&nbsp;&nbsp;&nbsp;&nbsp;Count Table After:&nbsp;
+                                    <input type="file" id="LN_CTA" data-automation-id="LN_CTA" name="LN_CTA" placeholder="Choose file"
+                                    (change)="onFileChange($event,'LN_CTA')" accept=".xls,.xlsx,.csv" [(ngModel)]="ca"/></span>
+                                </div>
+                </div>
+            </div>            <button class="btn-primary" (click)="ReDirect()">Generate Report</button>
+            
+            </div></div> <div *ngIf="form==1">
+                {{form}}
+          <A2LNComGrid></A2LNComGrid>
+                  <button class="btn-primary" (click)="open=1" style="color: black;margin-left: 15px; padding: 5px; font-size: 20px;"><b>ACCESS</b></button>
+                  <button class="btn-primary" (click)="open=2" style="color: black;margin-left: 15px; padding: 5px; font-size: 20px;"><b>LN</b></button>
+                  <div *ngIf="open==1"> 
+                  <p style="color: #0072ED;margin-left: 15px; padding: 5px; font-size: 20px;">ACCESS</p>
+                  <A2LNGrid></A2LNGrid></div>
+              <div *ngIf="open==2">
+                  <p style="color: #0072ED;margin-left: 15px; padding: 5px; font-size: 28px;">LN</p>
+                  <LNGrid></LNGrid></div>
+
+          </div>
+        </div>
+             </div>
+
+        

@@ -1,0 +1,65 @@
+<a href="#maincontent" class="skip-link" data-translate="text">SkipToMain</a>
+<soho-icons *ngIf="!useUpliftIcons"></soho-icons>
+<soho-icons-uplift *ngIf="useUpliftIcons"></soho-icons-uplift>
+<soho-icons-empty *ngIf="!useUpliftIcons"></soho-icons-empty>
+<soho-icons-empty-uplift *ngIf="useUpliftIcons"></soho-icons-empty-uplift>
+<nav soho-application-menu class="is-personalizable" [filterable]="true" [openOnLarge]="false"
+  [dismissOnClickMobile]="true" (menuVisibility)="onMenuVisibility($event)">
+  <div soho-searchfield-wrapper>
+  </div>
+  <nav>
+    <div class="accordion-header hide-focus">
+      <svg class="icon" focusable="false" aria-hidden="true" role="presentation">
+        <use href="#icon-home"></use>
+      </svg>
+      <a id="appmenu-a-item-one" data-automation-id="appmenu-a-item-one"
+        style="color:white;border:none;text-decoration: none;" routerLink="/" routerLinkActive="active">
+        <span style="width: auto;">Home</span></a>
+    </div>
+    <div class="accordion-header hide-focus">
+      <!-- <svg class="icon" focusable="false" aria-hidden="true" role="presentation">
+            <use href="#icon-url"></use></svg> -->
+      <a id="appmenu-a-item-two" data-automation-id="appmenu-a-item-two" style="color:white;text-decoration: none;"
+        routerLink="/A2LN"><span style="width: auto;">
+          A2LN</span></a>
+    </div>
+    <div class="accordion-header hide-focus">
+      <!-- <svg class="icon" focusable="false" aria-hidden="true" role="presentation">
+            <use href="#icon-formula-constituents"></use></svg> -->
+      <a id="appmenu-a-item-three" data-automation-id="appmenu-a-item-three" style="color:white;text-decoration: none;"
+        routerLink="/LN2LN"><span style="width: auto;">LN2LN</span></a>
+    </div>
+    <div class="accordion-header hide-focus">
+      <!-- <svg class="icon" focusable="false" aria-hidden="true" role="presentation">
+            <use href="#icon-formula-constituents"></use></svg> -->
+      <a id="appmenu-a-item-three" data-automation-id="appmenu-a-item-three" style="color:white;text-decoration: none;"
+        routerLink="/unrefCleaner"><span style="width: auto;">refError Cleaner </span></a>
+    </div>
+    <div class="accordion-header hide-focus">
+      <!-- <svg class="icon" focusable="false" aria-hidden="true" role="presentation">
+            <use href="#icon-formula-constituents"></use></svg> -->
+      <a id="appmenu-a-item-three" data-automation-id="appmenu-a-item-three" style="color:white;text-decoration: none;"
+        routerLink="/duplicateRemover"><span style="width: auto;">Duplicate Remover </span></a>
+    </div>
+
+  </nav>
+</nav>
+<div class="page-container no-scroll">
+  <soho-header>
+
+    <soho-toolbar-flex>
+      <button soho-toolbar-flex-nav-button>Show Navigation</button>
+      <soho-toolbar-flex-section [isTitle]="true">
+        <h2>
+          <span soho-toolbar-flex-page-title>DMF Utilities</span>
+        </h2>
+      </soho-toolbar-flex-section>
+    </soho-toolbar-flex>
+
+  </soho-header>
+  <div id="maincontent" class="page-container no-scroll" role="main" style="margin-top: 4rem;">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+<div soho-personalize (changetheme)="onChangeTheme($event)"></div>

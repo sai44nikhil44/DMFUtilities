@@ -1,0 +1,124 @@
+
+        <div class="row">
+            <div class="twelve columns">
+                <div class="title" style="background-color:deepskyblue; ">
+                    <span class="label font-size-px-40" style="text-align: center;color: black; padding: 5px; padding-bottom: 10px;">DMF Utilities
+                    </span>
+                </div>
+            </div>
+        </div>
+<div class="form-responsive row">
+    <div class="row">
+        <div class="twelve columns">
+            <div class="field" style="text-align: center;color: black;font-size: medium;">
+                <label for="options" style="color: black;">Choose an option</label>
+                <select soho-dropdown soho-busyindicator noSearch name="states1" id="states1"
+                    (change)="onChange($event)">
+                    <option>--Select One:--</option>
+                    <option>A2LN</option>
+                    <option>LN2LN</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!-- <div>
+        <input type="file" (change)="onFileChange($event)">
+    </div>
+
+    <div>
+        <button class="btn-primary" style="padding-bottom: 5px;" (click)="getData()">Work on Json</button>
+    </div> -->
+    <div class="field" *ngIf="show==1" style="text-align: center;">
+        <div class="card" style="padding: 15px;height: 400px;width: 1200px;margin-left: 35px;margin-right: 35px;">
+            <p style="text-align: center;color: #0072ED; padding: 5px; font-size: 30px;">A2LN</p>
+            <div class="row">
+                <div class="one-half column">
+                    <span class="label font-size-px-24" style="text-align: center;color: black; padding: 10px;">ACCESS</span>
+                    <div class="field">
+                        <span class="label font-size-px-25" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import Report:&nbsp;
+                    <!-- <label for="accessIm">Access Import Report</label> -->
+                        <input type="file" id="accessIm" data-automation-id="accessIm" name="accessIm" placeholder="Choose file"
+                        (change)="onFileChangeAccessImportReport($event)" accept=".xls,.xlsx,.csv" /></span>
+                    </div>
+                    <div class="field">
+                        <span class="label font-size-px-25" >Validation Report:&nbsp;
+                        <!-- <label for="accessvr">Access Validation Report</label> -->
+                            <input type="file" id="accessvr" data-automation-id="accessvr" name="accessvr" placeholder="Choose file"
+                            (change)="onFileChangeAccessValidationReport($event)" accept=".xls,.xlsx,.csv" /></span>
+                        </div>
+                </div>
+                        <div class="one-half column">
+                            <span class="label font-size-px-24" style="text-align: center;color: black; padding: 10px;">LN</span>
+                            <div class="field">
+                            <span class="label font-size-px-25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Migartion Run:&nbsp;
+                                <input type="file" id="LN_MR" data-automation-id="LN_MR" name="LN" placeholder="Choose file"
+                                (change)="onFileChangeLN_MR($event)" accept=".xls,.xlsx,.csv" /></span>
+                            </div>
+                            <div class="field">
+                                <span class="label font-size-px-25">Count Table Before:&nbsp;
+                                    <input type="file" id="LN_CTB" data-automation-id="LN_CTB" name="LN_CTB" placeholder="Choose file"
+                                    (change)="onFileChangeLN_CTB($event)" accept=".xls,.xlsx,.csv" /></span>
+                                </div>
+                                <div class="field">
+                                    <span class="label font-size-px-25">&nbsp;&nbsp;&nbsp;&nbsp;Count Table After:&nbsp;
+                                        <input type="file" id="LN_CTA" data-automation-id="LN_CTA" name="LN_CTA" placeholder="Choose file"
+                                        (change)="onFileChangeLN_CTA($event)" accept=".xls,.xlsx,.csv" /></span>
+                                    </div>
+                    
+                    </div>
+                    </div>
+
+<br>
+            <button class="btn-primary" style="padding-bottom: 5px;" (click)="ReDirect()">Generate Report</button>
+
+        </div>
+
+    </div>
+    <div class="field" *ngIf="show==2" style="text-align: center;">
+        <div class="card auto-height" style="padding: 15px;">
+            <p style="text-align: center;color: #0072ED; padding: 5px;font-size: 28px;">LN2LN</p>
+            <span class="label font-size-px-25" style="text-align: center;color: black; padding: 10px;">LN:
+                <input type="file" id="source" data-automation-id="source" name="source"
+                    placeholder="Choose file" /></span>
+            <span class="label font-size-px-25" style="text-align: center;color: black; padding: 10px;">LN:
+                <input type="file" id="target" data-automation-id="target" name="target"
+                    placeholder="Choose file" /></span><br><br>
+            <button class="btn-primary" style="padding-bottom: 5px;" (click)="ReDirect()">Generate Report</button>
+        </div>
+    </div>
+
+    <div class="field" *ngIf="show==0"></div>
+    <!-- <div *ngIf="form==1" style="background-color: grey;">
+        <DMF_GenerateForm></DMF_GenerateForm>
+    </div> -->
+</div>
+
+
+
+
+
+
+
+
+
+            
+            <!-- <span class="label font-size-px-25" style="text-align: center;color: black; padding: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LN:
+                <input type="file" id="LN" data-automation-id="LN" name="LN" placeholder="Choose file"
+                    (change)="onFileChangeLN($event)" accept=".xls" /></span>
+           
+                    
+            <span class="label font-size-px-25" style="text-align: center;color: black; padding: 10px;">Validation Report:
+                <input type="file" id="valreport" data-automation-id="valreport" name="valreport" placeholder="Choose file"
+                             accept=".xls" /></span>
+
+            <span class="label font-size-px-25" style="text-align: center;color: black; padding: 10px;">Migartion Run:
+                <input type="file" id="mig_run" data-automation-id="mig_run" name="mig_run" placeholder="Choose file"
+                                             accept=".xls" /></span>
+                                    
+            <span class="label font-size-px-25" style="text-align: center;color: black; padding: 10px;">Count Table Before:
+                <input type="file" id="Count_Table_Before" data-automation-id="Count_Table_Before" name="Count_Table_Before" placeholder="Choose file"
+                                             accept=".xls" /></span>
+             <span class="label font-size-px-25" style="text-align: center;color: black; padding: 10px;">Count Table After:
+                <input type="file" id="Count_Table_After" data-automation-id="Count_Table_After" name="Count_Table_After" placeholder="Choose file"
+                                                                             accept=".xls" /></span>
+                                             <br><br> -->

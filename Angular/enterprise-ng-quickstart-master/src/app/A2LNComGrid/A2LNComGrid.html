@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="twelve columns">
+      <div class="field">
+        <button soho-button (click)="export()">Export (xls)</button>
+      </div>
+    </div>
+  </div>
+  
+    <section class="scrollable-y contained-scrolling-right-top">
+  <div class="row top-padding">
+    <div class="twelve columns demo" role="main">
+      <section soho-busyindicator class="scrollable contained-scrolling-right-bottom" style="height: 100%">
+        <div soho-datagrid  (selected)="onSelected($event)"
+        [onBeforeSelect]="onBeforeSelect"
+        (openFilterRow)="onOpenFilterRow($event)"
+        (closeFilterRow)="onCloseFilterRow($event)"
+        selectable="multiple"
+        filterable="true" style="visibility: hidden; height: 5px;">
+      </div>
+      </section>
+    </div>
+  </div>
+  </section>
+ 
+  

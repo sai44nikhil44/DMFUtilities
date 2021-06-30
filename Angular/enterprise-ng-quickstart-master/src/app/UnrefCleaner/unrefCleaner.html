@@ -1,0 +1,33 @@
+<div class="page-container scrollable" role="main">
+    <div class="field" style="text-align: center;">
+        <div class="card auto-height" style="padding: 15px; margin: 15px;margin-right: 15px;">
+            <p style="text-align: center;color: #0072ED; padding: 5px;font-size: 28px; margin-bottom: 15px;">UnRef
+                Errors
+                Cleaner </p>
+            <br>
+            <br>
+
+            <div class="field">
+                <span
+                    class="label font-size-px-25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Source:&nbsp;
+                    <input type="file" id="source" data-automation-id="source" name="source" placeholder="Choose file"
+                        aria-required="true" (change)="onFileChangeUnref($event)" accept=".txt"
+                        data-validate="required" /></span>
+            </div>
+
+
+
+            <br><br>
+            <button class="btn-primary" style="padding-bottom: 5px;" (click)="ReDirect()">Generate Report</button>
+
+        </div>
+    </div>
+
+    <div *ngIf="out != ''">
+        <h1 style="margin: 15px;">Output:</h1>
+        <textarea name="message" rows="10" cols="30"
+            style="width: 1250px;white-space: pre-line; margin:auto; margin-left: 15px;">{{out}}</textarea>
+        <button class="btn-primary" style="padding-bottom: 5px; margin:5px;text-align: center; "
+            (click)=dynamicDownloadTxt()>Download
+            Report</button>
+    </div>
